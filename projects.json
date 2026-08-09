@@ -5,7 +5,7 @@
     "description": "A Qt/QML interface for a selective retina therapy system with OCT feedback, laser and galvo control, and a standalone mode for GUI development without hardware.",
     "role": "GUI architecture, interaction flow, standalone mocks",
     "stack": ["Qt Quick", "QML", "C++17", "CMake", "QtTest"],
-    "image": "assets/projects/ba-srt-treatment-plan.png",
+    "image": "/assets/projects/ba-srt-treatment-plan.png",
     "imageAlt": "SRT laser treatment planning interface with OCT imaging and pattern controls",
     "visual": {
       "accent": "cyan",
@@ -18,7 +18,7 @@
     "description": "A React web app for personalized recipe and meal planning with login, user settings, recipe analysis, chat flows, i18n, and a typed API client generated from OpenAPI.",
     "role": "Feature UI, forms, state, API integration",
     "stack": ["React 19", "MUI", "Nx", "Redux Toolkit", "i18next"],
-    "image": "assets/projects/sa-bitewise-dietary-matching.png",
+    "image": "/assets/projects/sa-bitewise-dietary-matching.png",
     "imageAlt": "BiteWise menu plan interface showing dietary matching cards",
     "visual": {
       "accent": "lime",
@@ -31,7 +31,7 @@
     "description": "A full-stack project with an Angular frontend, Angular Material, generated REST client, auth flows, Docker setup, and Playwright tests for frontend paths.",
     "role": "Angular frontend, API client, testing workflow",
     "stack": ["Angular 19", "Material", "TypeScript", "OpenAPI", "Playwright"],
-    "image": "assets/projects/lunadrive-cost-overview.png",
+    "image": "/assets/projects/lunadrive-cost-overview.png",
     "imageAlt": "LunaDrive cost overview page with filters and expense table",
     "visual": {
       "accent": "amber",
@@ -44,7 +44,7 @@
     "description": "A website for students at the OST Rapperswil campus with events, organization pages, internal login, and an admin GUI for users, organizations, and content.",
     "role": "SvelteKit pages, admin flows, responsive UI",
     "stack": ["SvelteKit", "TypeScript", "Vite", "MongoDB", "JWT"],
-    "image": "assets/projects/students-ost-homepage.png",
+    "image": "/assets/projects/students-ost-homepage.png",
     "imageAlt": "Students OST-RJ homepage with campus navigation and organization sections",
     "visual": {
       "accent": "rose",
