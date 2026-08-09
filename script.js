@@ -440,7 +440,7 @@ const initProjectCarousel = () => {
 
   const start = async () => {
     try {
-      const response = await fetch("projects.json", { cache: "no-store" });
+      const response = await fetch("/projects.json", { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`Failed to load projects.json (${response.status})`);
       }
