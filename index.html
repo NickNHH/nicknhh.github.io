@@ -3,111 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Frontend Developer Portfolio" />
-  <title>Nico - Frontend Developer</title>
+  <meta name="description" content="Portfolio of Nico Tuscano, frontend developer focused on web interfaces, UI architecture, and clean user flows." />
+  <title>Nico Tuscano - Frontend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="tailwind.css" />
 </head>
-<body class="min-h-screen bg-slate-950 font-[Inter] text-slate-100 antialiased selection:bg-blue-500/30 selection:text-white">
-  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute -left-24 top-12 h-72 w-72 animate-float rounded-full bg-blue-500/20 blur-3xl"></div>
-    <div class="absolute -bottom-10 right-0 h-72 w-72 animate-float-delayed rounded-full bg-violet-500/20 blur-3xl"></div>
-  </div>
+<body class="min-h-screen bg-[#101114] font-[Inter] text-stone-100 antialiased selection:bg-cyan-300/25 selection:text-white">
+  <div class="site-noise" aria-hidden="true"></div>
+  <div class="site-grid" aria-hidden="true"></div>
 
-  <header class="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
-    <div class="mx-auto flex h-16 w-[min(1100px,92%)] items-center justify-between">
-      <a class="text-lg font-extrabold tracking-[0.16em]" href="#home">NT.</a>
-      <button id="menuToggle" class="rounded-lg border border-white/15 px-3 py-1.5 text-xl md:hidden" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav id="mainNav" class="absolute right-4 top-16 hidden min-w-40 flex-col gap-1 rounded-xl border border-white/10 bg-slate-900/95 p-3 md:static md:flex md:min-w-0 md:flex-row md:bg-transparent md:p-0" aria-label="Main navigation">
-        <a class="nav-link rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:text-white" href="#about">About</a>
-        <a class="nav-link rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:text-white" href="#skills">Skills</a>
-        <a class="nav-link rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:text-white" href="#projects">Projects</a>
-        <a class="nav-link rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:text-white" href="#contact">Contact</a>
+  <header class="sticky top-0 z-30 border-b border-stone-100/10 bg-[#101114]/85 backdrop-blur">
+    <div class="mx-auto flex h-16 w-[min(1120px,92%)] items-center justify-between">
+      <a class="group flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.18em]" href="#home" aria-label="Back to top">
+        <span class="h-2.5 w-2.5 bg-cyan-300 transition group-hover:rotate-45"></span>
+        NT
+      </a>
+      <button id="menuToggle" class="grid h-10 w-10 place-items-center border border-stone-100/15 bg-stone-100/5 md:hidden" aria-label="Open navigation" aria-expanded="false">
+        <span class="grid gap-1" aria-hidden="true">
+          <span class="block h-0.5 w-4 bg-stone-100"></span>
+          <span class="block h-0.5 w-4 bg-stone-100"></span>
+          <span class="block h-0.5 w-4 bg-stone-100"></span>
+        </span>
+      </button>
+      <nav id="mainNav" class="absolute right-4 top-16 hidden min-w-44 flex-col gap-1 border border-stone-100/10 bg-[#15161a]/95 p-3 shadow-2xl shadow-black/30 md:static md:flex md:min-w-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Main navigation">
+        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#about">Profile</a>
+        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#skills">Stack</a>
+        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#projects">Projects</a>
+        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="home" class="pb-10">
-    <section class="reveal mx-auto grid min-h-[80vh] w-[min(1100px,92%)] content-center py-16">
-      <p class="mb-2 text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Frontend Developer</p>
-      <h1 class="text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">Hi, I am <span class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">Nico!</span></h1>
-      <p class="mt-5 max-w-2xl text-slate-300">I build fast, responsive, and accessible web interfaces with modern frontend tools and smooth user experience details.</p>
-      <div class="mt-7 flex flex-wrap gap-3">
-        <a class="rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2.5 font-semibold text-white shadow-lg shadow-blue-700/30 transition hover:-translate-y-0.5" href="#projects">View Projects</a>
-        <a class="rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 font-semibold transition hover:-translate-y-0.5 hover:bg-white/10" href="#contact">Get In Touch</a>
+  <main id="home" class="pb-12">
+    <section class="reveal mx-auto grid min-h-[82vh] w-[min(1120px,92%)] items-center gap-10 py-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div>
+        <p class="mb-4 inline-flex border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.24em] text-cyan-200">Frontend Developer</p>
+        <h1 class="max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-normal sm:text-6xl lg:text-7xl">
+          Interfaces with edge, rhythm, and clean code.
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-stone-300">
+          I am Nico, a frontend developer who builds interfaces that feel clear:
+          responsive, maintainable, close to the user flow, and tuned with care.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn-primary" href="#projects">View projects</a>
+          <a class="btn-secondary" href="#contact">Get in touch</a>
+        </div>
       </div>
 
-      <div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-          <p class="text-3xl font-extrabold" data-count="12">0</p>
-          <p class="text-sm text-slate-300">Projects Completed</p>
+      <aside class="hero-panel" aria-label="Portfolio snapshot">
+        <div class="flex items-center justify-between border-b border-stone-100/10 pb-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-stone-400">current focus</p>
+            <p class="mt-1 text-xl font-bold">Web UI Engineering</p>
+          </div>
+          <span class="h-3 w-3 bg-lime-300"></span>
         </div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-          <p class="text-3xl font-extrabold" data-count="3">0</p>
-          <p class="text-sm text-slate-300">Years Learning & Building</p>
+        <div class="mt-5 grid gap-3">
+          <div class="hero-row">
+            <span>React / Angular / Svelte</span>
+            <span>frontend</span>
+          </div>
+          <div class="hero-row">
+            <span>Responsive apps and dashboards</span>
+            <span>ui work</span>
+          </div>
+          <div class="hero-row">
+            <span>Forms, auth and data flows</span>
+            <span>product</span>
+          </div>
         </div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-          <p class="text-3xl font-extrabold" data-count="100">0</p>
-          <p class="text-sm text-slate-300">Commitment Level (%)</p>
+        <div class="mt-6 grid grid-cols-3 gap-3">
+          <div class="metric-tile">
+            <p class="text-3xl font-extrabold" data-count="4">0</p>
+            <p>Highlighted projects</p>
+          </div>
+          <div class="metric-tile">
+            <p class="text-3xl font-extrabold" data-count="9">0</p>
+            <p>Years</p>
+          </div>
+          <div class="metric-tile">
+            <p class="text-3xl font-extrabold" data-count="5">0</p>
+            <p>Frameworks</p>
+          </div>
         </div>
+      </aside>
+    </section>
+
+    <section id="about" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 border-y border-stone-100/10 py-14 md:grid-cols-[0.7fr_1.3fr]">
+      <h2 class="section-title">Profile</h2>
+      <p class="max-w-3xl text-lg leading-8 text-stone-300">
+        I come from projects where UI is not just decoration: medical control interfaces,
+        role-based web apps, admin workflows, generated API clients, forms, state, and tests.
+        That mix of product thinking and technical discipline is what I bring to frontend work.
+      </p>
+    </section>
+
+    <section id="skills" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 py-14 md:grid-cols-[0.7fr_1.3fr]">
+      <h2 class="section-title">Stack</h2>
+      <div class="flex flex-wrap gap-2.5">
+        <span class="skill-chip">HTML</span>
+        <span class="skill-chip">CSS / Sass</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">TypeScript</span>
+        <span class="skill-chip">Tailwind CSS</span>
+        <span class="skill-chip">React</span>
+        <span class="skill-chip">Angular</span>
+        <span class="skill-chip">SvelteKit</span>
+        <span class="skill-chip">MUI</span>
+        <span class="skill-chip">QML</span>
       </div>
     </section>
 
-    <section id="about" class="reveal mx-auto w-[min(1100px,92%)] py-14">
-      <h2 class="text-3xl font-bold">About Me</h2>
-      <p class="mt-4 max-w-3xl text-slate-300">I am a frontend-focused developer passionate about creating clean UI, smooth UX, and high-performance websites. I enjoy turning ideas into elegant, production-ready experiences.</p>
-    </section>
-
-    <section id="skills" class="reveal mx-auto w-[min(1100px,92%)] py-14">
-      <h2 class="text-3xl font-bold">Core Skills</h2>
-      <div class="mt-5 flex flex-wrap gap-2.5">
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">HTML</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">CSS / Sass</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">JavaScript</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">TypeScript</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">Tailwind CSS</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">Angular</span>
-        <span class="rounded-full border border-white/10 bg-slate-900/70 px-3 py-1 text-sm">React</span>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal mx-auto w-[min(1100px,92%)] py-14">
-      <div class="mb-5 flex items-center justify-between gap-4">
-        <h2 class="text-3xl font-bold">Featured Projects</h2>
-        <a class="text-sm font-medium text-violet-300 hover:text-violet-200" href="#">See all projects</a>
+    <section id="projects" class="reveal mx-auto w-[min(1120px,92%)] py-14">
+      <div class="mb-6 flex items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-200">selected work</p>
+          <h2 class="section-title mt-2">Projects</h2>
+        </div>
+        <p class="hidden max-w-sm text-right text-sm text-stone-400 sm:block">Four study projects, curated for frontend depth and UI responsibility.</p>
       </div>
 
       <div class="relative">
-        <div id="projectViewport" class="cursor-grab overflow-hidden rounded-2xl">
+      <div class="relative">
+        <div id="projectViewport" class="cursor-grab overflow-hidden">
           <div id="projectTrack" class="flex"></div>
         </div>
 
-        <button id="prevProject" class="absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/15 bg-slate-900/90 p-2 text-white transition hover:bg-slate-800 md:inline-flex" aria-label="Previous project">◀</button>
-        <button id="nextProject" class="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/15 bg-slate-900/90 p-2 text-white transition hover:bg-slate-800 md:inline-flex" aria-label="Next project">▶</button>
-        <div id="projectDots" class="mt-5 flex items-center justify-center gap-2"></div>
+        <button id="prevProject" class="carousel-button -left-3" aria-label="Previous project">&lt;</button>
+        <button id="nextProject" class="carousel-button -right-3" aria-label="Next project">&gt;</button>
+        <div id="projectDots" class="mt-6 flex items-center justify-center gap-2"></div>
       </div>
     </section>
 
-    <section id="contact" class="reveal mx-auto w-[min(1100px,92%)] py-14">
-      <h2 class="text-3xl font-bold">Contact</h2>
-      <p class="mt-4 max-w-2xl text-slate-300">My socials below.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a class="rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2.5 font-semibold text-white transition hover:-translate-y-0.5" href="mailto:your.email@example.com">Email Me</a>
-        <a class="rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 font-semibold transition hover:-translate-y-0.5 hover:bg-white/10" href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 font-semibold transition hover:-translate-y-0.5 hover:bg-white/10" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
+    <section id="contact" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 border-t border-stone-100/10 py-14 md:grid-cols-[0.7fr_1.3fr]">
+      <h2 class="section-title">Contact</h2>
+      <div>
+        <p class="max-w-2xl text-lg leading-8 text-stone-300">Get in contact with me here:</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="btn-primary" href="mailto:nick200108@gmail.com">Email</a>
+          <a class="btn-secondary" href="https://github.com/nicknhh" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/10 py-6 text-slate-400">
-    <div class="mx-auto w-[min(1100px,92%)]">
-      <p>© <span id="year"></span> Nico Tuscano. Built for GitHub Pages.</p>
+  <footer class="border-t border-stone-100/10 py-6 text-stone-500">
+    <div class="mx-auto flex w-[min(1120px,92%)] flex-wrap items-center justify-between gap-2 text-sm">
+      <p>&copy; <span id="year"></span> Nico Tuscano</p>
+      <p>Built with Tailwind CSS for GitHub Pages.</p>
     </div>
   </footer>
 
   <script src="script.js" defer></script>
 </body>
 </html>
-

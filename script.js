@@ -97,18 +97,61 @@ const initProjectCarousel = () => {
     return;
   }
 
-  const slideTemplate = (project) => `
-    <article data-slide="true" class="px-2">
-      <div class="h-full overflow-hidden rounded-2xl border border-white/10 bg-slate-900/75">
-        <img draggable="false" class="h-44 w-full object-cover" src="${project.image}" alt="${project.imageAlt || project.title}" />
-        <div class="p-5">
-          <h3 class="text-xl font-semibold">${project.title}</h3>
-          <p class="mt-2 text-sm text-slate-300">${project.description}</p>
-          <a draggable="false" href="${project.link}" class="mt-4 inline-block text-sm font-semibold text-blue-300 hover:text-blue-200">Live Demo -></a>
+  const escapeHtml = (value) =>
+    String(value || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const visualTemplate = (project) => {
+    const visual = project.visual || {};
+    const accent = escapeHtml(visual.accent || "cyan");
+    const label = escapeHtml(visual.label || "Interface");
+    const metric = escapeHtml(visual.metric || "UI");
+
+    return `
+      <div class="project-visual project-visual-${accent}" aria-hidden="true">
+        <div class="visual-topline">
+          <span>${label}</span>
+          <span>${metric}</span>
+        </div>
+        <div class="visual-canvas">
+          <span class="visual-node visual-node-a"></span>
+          <span class="visual-node visual-node-b"></span>
+          <span class="visual-node visual-node-c"></span>
+          <span class="visual-rail visual-rail-a"></span>
+          <span class="visual-rail visual-rail-b"></span>
+          <span class="visual-rail visual-rail-c"></span>
         </div>
       </div>
-    </article>
-  `;
+    `;
+  };
+
+  const slideTemplate = (project) => {
+    const tags = Array.isArray(project.stack) ? project.stack : [];
+    const tagMarkup = tags.map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("");
+    const sourcePath = project.sourcePath
+      ? `<p class="mt-4 truncate border-t border-stone-100/10 pt-3 text-xs text-stone-500" title="${escapeHtml(project.sourcePath)}">${escapeHtml(project.sourcePath)}</p>`
+      : "";
+
+    return `
+      <article data-slide="true" class="px-2">
+        <div class="project-card">
+          ${visualTemplate(project)}
+          <div class="p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-cyan-200">${escapeHtml(project.kicker)}</p>
+            <h3 class="mt-2 text-xl font-bold leading-tight">${escapeHtml(project.title)}</h3>
+            <p class="mt-3 min-h-24 text-sm leading-6 text-stone-300">${escapeHtml(project.description)}</p>
+            <p class="mt-4 text-sm text-stone-400"><span class="text-stone-200">Role:</span> ${escapeHtml(project.role)}</p>
+            <div class="mt-4 flex flex-wrap gap-2">${tagMarkup}</div>
+            ${sourcePath}
+          </div>
+        </div>
+      </article>
+    `;
+  };
 
   const renderSlides = (projects) => {
     track.innerHTML = projects.map((project) => slideTemplate(project)).join("");
@@ -150,10 +193,10 @@ const initProjectCarousel = () => {
   const updateDots = () => {
     const activeIndex = getActiveDotIndex();
     dots.forEach((dot, index) => {
-      dot.classList.toggle("bg-blue-300", index === activeIndex);
+      dot.classList.toggle("bg-cyan-300", index === activeIndex);
       dot.classList.toggle("w-6", index === activeIndex);
-      dot.classList.toggle("bg-slate-500/60", index !== activeIndex);
-      dot.classList.toggle("w-2.5", index !== activeIndex);
+      dot.classList.toggle("bg-stone-500/60", index !== activeIndex);
+      dot.classList.toggle("w-2", index !== activeIndex);
     });
   };
 
@@ -162,7 +205,7 @@ const initProjectCarousel = () => {
     dots = originals.map((_, index) => {
       const dot = document.createElement("button");
       dot.type = "button";
-      dot.className = "h-2.5 w-2.5 rounded-full bg-slate-500/60 transition-all duration-300";
+      dot.className = "h-2 w-2 bg-stone-500/60 transition-all duration-300";
       dot.setAttribute("aria-label", `Go to project ${index + 1}`);
       dot.addEventListener("click", () => {
         if (isTransitioning) return;

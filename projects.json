@@ -1,31 +1,54 @@
 [
   {
-    "title": "UI Component Library",
-    "description": "Reusable design system components with documentation and theming support for multiple products.",
-    "image": "https://placehold.co/800x450/1e293b/e2e8f0?text=Project+Preview+01",
-    "imageAlt": "Project placeholder 1",
-    "link": "#"
+    "title": "Bachelor Thesis: SRT Laser Treatment GUI",
+    "kicker": "BA - Medical UI",
+    "description": "A Qt/QML interface for a selective retina therapy system with OCT feedback, laser and galvo control, and a standalone mode for GUI development without hardware.",
+    "role": "GUI architecture, interaction flow, standalone mocks",
+    "stack": ["Qt Quick", "QML", "C++17", "CMake", "QtTest"],
+    "visual": {
+      "type": "device",
+      "accent": "cyan",
+      "label": "Treatment Panel",
+      "metric": "OCT live"
+    }
   },
   {
-    "title": "E-commerce Frontend",
-    "description": "Responsive storefront with filtering, cart interactions, and polished micro-animations.",
-    "image": "https://placehold.co/800x450/0f172a/e2e8f0?text=Project+Preview+02",
-    "imageAlt": "Project placeholder 2",
-    "link": "#"
+    "title": "Semester Thesis: SmartEating Web App",
+    "kicker": "SA - Product Frontend",
+    "description": "A React web app for personalized recipe and meal planning with login, user settings, recipe analysis, chat flows, i18n, and a typed API client generated from OpenAPI.",
+    "role": "Feature UI, forms, state, API integration",
+    "stack": ["React 19", "MUI", "Nx", "Redux Toolkit", "i18next"],
+    "visual": {
+      "type": "nutrition",
+      "accent": "lime",
+      "label": "Meal Planner",
+      "metric": "i18n + API"
+    }
   },
   {
-    "title": "Portfolio Dashboard",
-    "description": "Personal analytics dashboard visualizing GitHub activity and project metrics.",
-    "image": "https://placehold.co/800x450/1d4ed8/e2e8f0?text=Project+Preview+03",
-    "imageAlt": "Project placeholder 3",
-    "link": "#"
+    "title": "LunaDrive",
+    "kicker": "SE Project - Angular App",
+    "description": "A full-stack project with an Angular frontend, Angular Material, generated REST client, auth flows, Docker setup, and Playwright tests for frontend paths.",
+    "role": "Angular frontend, API client, testing workflow",
+    "stack": ["Angular 19", "Material", "TypeScript", "OpenAPI", "Playwright"],
+    "visual": {
+      "type": "mobility",
+      "accent": "amber",
+      "label": "Drive Console",
+      "metric": "E2E tested"
+    }
   },
   {
-    "title": "Landing Page Suite",
-    "description": "A collection of conversion-focused landing pages with A/B tested layouts and animations.",
-    "image": "https://placehold.co/800x450/7c3aed/e2e8f0?text=Project+Preview+04",
-    "imageAlt": "Project placeholder 4",
-    "link": "#"
+    "title": "Students OST-RJ Website",
+    "kicker": "Campus Platform - SvelteKit",
+    "description": "A website for students at the OST Rapperswil campus with events, organization pages, internal login, and an admin GUI for users, organizations, and content.",
+    "role": "SvelteKit pages, admin flows, responsive UI",
+    "stack": ["SvelteKit", "TypeScript", "Vite", "MongoDB", "JWT"],
+    "visual": {
+      "type": "campus",
+      "accent": "rose",
+      "label": "Campus Hub",
+      "metric": "CRUD admin"
+    }
   }
 ]
-
