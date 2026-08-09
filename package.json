@@ -1,0 +1,14 @@
+{
+  "name": "nicknhh-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static frontend portfolio with Tailwind CSS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
+

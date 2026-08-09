@@ -1,0 +1,31 @@
+[
+  {
+    "title": "UI Component Library",
+    "description": "Reusable design system components with documentation and theming support for multiple products.",
+    "image": "https://placehold.co/800x450/1e293b/e2e8f0?text=Project+Preview+01",
+    "imageAlt": "Project placeholder 1",
+    "link": "#"
+  },
+  {
+    "title": "E-commerce Frontend",
+    "description": "Responsive storefront with filtering, cart interactions, and polished micro-animations.",
+    "image": "https://placehold.co/800x450/0f172a/e2e8f0?text=Project+Preview+02",
+    "imageAlt": "Project placeholder 2",
+    "link": "#"
+  },
+  {
+    "title": "Portfolio Dashboard",
+    "description": "Personal analytics dashboard visualizing GitHub activity and project metrics.",
+    "image": "https://placehold.co/800x450/1d4ed8/e2e8f0?text=Project+Preview+03",
+    "imageAlt": "Project placeholder 3",
+    "link": "#"
+  },
+  {
+    "title": "Landing Page Suite",
+    "description": "A collection of conversion-focused landing pages with A/B tested layouts and animations.",
+    "image": "https://placehold.co/800x450/7c3aed/e2e8f0?text=Project+Preview+04",
+    "imageAlt": "Project placeholder 4",
+    "link": "#"
+  }
+]
+
