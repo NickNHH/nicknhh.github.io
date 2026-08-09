@@ -107,15 +107,30 @@ const initProjectCarousel = () => {
 
   const visualTemplate = (project) => {
     const visual = project.visual || {};
-    const accent = escapeHtml(visual.accent || "cyan");
+    const image = escapeHtml(project.image);
+    const imageAlt = escapeHtml(project.imageAlt || project.title);
+    const accentColors = {
+      cyan: "34 211 238",
+      lime: "190 242 100",
+      amber: "251 191 36",
+      rose: "251 113 133"
+    };
+    const accent = accentColors[visual.accent] || accentColors.cyan;
     const label = escapeHtml(visual.label || "Interface");
-    const metric = escapeHtml(visual.metric || "UI");
+
+    if (image) {
+      return `
+        <div class="project-visual project-image-visual" style="--accent: ${accent};">
+          <img draggable="false" class="project-image" src="${image}" alt="${imageAlt}" />
+          <div class="project-image-label" aria-hidden="true">${label}</div>
+        </div>
+      `;
+    }
 
     return `
-      <div class="project-visual project-visual-${accent}" aria-hidden="true">
+      <div class="project-visual" style="--accent: ${accent};" aria-hidden="true">
         <div class="visual-topline">
           <span>${label}</span>
-          <span>${metric}</span>
         </div>
         <div class="visual-canvas">
           <span class="visual-node visual-node-a"></span>
@@ -278,7 +293,7 @@ const initProjectCarousel = () => {
     if (autoPlay) {
       clearInterval(autoPlay);
     }
-    autoPlay = setInterval(next, 4200);
+    autoPlay = setInterval(next, 20000);
   };
 
   // Prevent native browser image/link dragging from hijacking swipe gestures.

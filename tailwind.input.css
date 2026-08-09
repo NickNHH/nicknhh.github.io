@@ -56,11 +56,11 @@
     @apply text-xs uppercase tracking-[0.18em] text-stone-500;
   }
 
-  .metric-tile {
+  .stat-tile {
     @apply border border-stone-100/10 bg-black/20 p-3;
   }
 
-  .metric-tile p:last-child {
+  .stat-tile p:last-child {
     @apply mt-1 text-xs uppercase tracking-[0.14em] text-stone-500;
   }
 
@@ -79,6 +79,39 @@
 
   .project-visual {
     @apply relative h-48 overflow-hidden border-b border-stone-100/10 bg-[#0c0d10] p-4;
+  }
+
+  .project-image-visual {
+    @apply p-0;
+  }
+
+  .project-image {
+    @apply h-full w-full object-cover object-left-top;
+  }
+
+  .project-image-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 54%, rgb(12 13 16 / 0.78)),
+      linear-gradient(to right, rgb(var(--accent, 34 211 238) / 0.16), transparent 42%);
+    pointer-events: none;
+  }
+
+  .project-image-label {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    border: 1px solid rgb(var(--accent, 34 211 238) / 0.45);
+    background: rgb(12 13 16 / 0.78);
+    padding: 0.45rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(245 245 244);
+    backdrop-filter: blur(8px);
   }
 
   .visual-topline {
@@ -148,22 +181,6 @@
     left: 46%;
     right: 18%;
     top: 46%;
-  }
-
-  .project-visual-cyan {
-    --accent: 34 211 238;
-  }
-
-  .project-visual-lime {
-    --accent: 190 242 100;
-  }
-
-  .project-visual-amber {
-    --accent: 251 191 36;
-  }
-
-  .project-visual-rose {
-    --accent: 251 113 133;
   }
 
   .project-visual::after {
