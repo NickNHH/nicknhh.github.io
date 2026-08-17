@@ -148,7 +148,7 @@ slides.splice(11, 1,
     body:bi(
       `<p class="case-lede">The project delivered a functional prototype and a basis for further development, not production-ready medical software.</p><ul class="case-list"><li>Further work is needed for pattern rotation, parameter changes, small controls, and consistent wording.</li><li>The final tests used students instead of medical end users.</li><li>The tests ran on a 14-inch rather than the intended 21.5-inch screen.</li></ul><blockquote>The limitations are documented so that the positive test results are not interpreted beyond the test setup.</blockquote>`,
       `<p class="case-lede">Das Projekt lieferte einen funktionsfähigen Prototyp und eine Grundlage für die weitere Entwicklung, jedoch noch keine produktionsreife medizinische Software.</p><ul class="case-list"><li>Verbesserungspotenzial besteht bei Pattern-Rotation, Parameteränderungen, kleinen Bedienelementen und konsistentem Wording.</li><li>Die abschliessenden Tests fanden mit Studierenden statt und nicht mit medizinischen Endnutzenden.</li><li>Getestet wurde auf einem 14-Zoll- statt dem vorgesehenen 21.5-Zoll-Bildschirm.</li></ul><blockquote>Die Limitationen sind dokumentiert, damit die positiven Testergebnisse nicht über das Testsetting hinaus interpretiert werden.</blockquote>`),
-    media:image("implemented-imaging.webp",bi("Implemented Imaging View with SLO and OCT images","Implementierte Imaging View mit SLO- und OCT-Bildern"))
+    media:image("../../projects/ba-srt-treatment-plan.png",bi("SRT laser treatment planning interface with retinal imaging and pattern controls","Planungsansicht des SRT-Laser-GUI mit Netzhautbildern und Pattern-Steuerung"))
   }
 );
 
