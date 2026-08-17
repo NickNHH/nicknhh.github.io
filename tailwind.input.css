@@ -270,6 +270,18 @@
   .case-media { @apply min-w-0; }
   .case-figure { @apply overflow-hidden border border-stone-100/10 bg-black/30 p-2 shadow-[10px_10px_0_rgb(0_0_0/0.25)]; }
   .case-figure img { @apply max-h-[68vh] w-full object-contain; }
+  .case-image-button { @apply relative block h-full w-full cursor-zoom-in bg-transparent; }
+  .case-image-button img { @apply mx-auto; }
+  .case-image-hint { @apply absolute bottom-2 right-2 grid h-10 w-10 place-items-center border border-stone-100/20 bg-[#101114]/90 text-lg text-stone-100 opacity-80 backdrop-blur transition; }
+  .case-image-button:hover .case-image-hint,
+  .case-image-button:focus-visible .case-image-hint { @apply border-cyan-300 bg-cyan-300 text-stone-950 opacity-100; }
+  .image-dialog { width: 100vw; height: 100dvh; max-width: none; max-height: none; padding: 0; border: 0; overflow: hidden; background: #101114; color: rgb(245 245 244); }
+  .image-dialog::backdrop { background: rgb(0 0 0 / 0.82); backdrop-filter: blur(5px); }
+  .image-dialog-bar { @apply sticky top-0 z-10 flex min-h-14 items-center justify-between gap-4 border-b border-stone-100/10 bg-[#101114] px-4; }
+  .image-dialog-bar p { @apply truncate text-sm text-stone-300; }
+  .image-dialog-bar button { @apply min-h-11 shrink-0 border border-stone-100/20 px-4 text-sm font-bold text-stone-100 transition hover:border-cyan-300 hover:text-cyan-200; }
+  .image-dialog-canvas { display: grid; width: 100%; height: calc(100% - 3.5rem); place-items: center; overflow: hidden; padding: 1rem; }
+  .image-dialog-canvas img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
   .case-figure-tall img { @apply max-h-[65vh]; }
   .case-figure-square img { @apply max-h-[60vh]; }
   .case-summary-grid, .insight-grid { @apply mt-7 grid gap-px overflow-hidden border border-stone-100/10 bg-stone-100/10 sm:grid-cols-2; }
