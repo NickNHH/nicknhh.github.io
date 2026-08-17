@@ -1,54 +1,52 @@
 [
   {
-    "title": "Bachelor Thesis: SRT Laser Treatment GUI",
-    "kicker": "BA - Medical UI",
-    "description": "A Qt/QML interface for a selective retina therapy system with OCT feedback, laser and galvo control, and a standalone mode for GUI development without hardware.",
-    "role": "GUI architecture, interaction flow, standalone mocks",
-    "stack": ["Qt Quick", "QML", "C++17", "CMake", "QtTest"],
-    "image": "/assets/projects/ba-srt-treatment-plan.png",
-    "imageAlt": "SRT laser treatment planning interface with OCT imaging and pattern controls",
-    "visual": {
-      "accent": "cyan",
-      "label": "Treatment Panel"
-    }
+    "slug": "ba-srt-laser-gui", "status": "published", "detailUrl": "project.html?project=ba-srt-laser-gui",
+    "title": {"en":"SRT Laser Treatment GUI","de":"GUI für einen medizinischen SRT-Laser"},
+    "kicker": {"en":"Bachelor thesis · Medical UX","de":"Bachelorarbeit · Medical UX"},
+    "description": {"en":"Redesign and implementation of the GUI for an experimental SRT laser system, from analysis and Figma prototyping to usability tests and integration with the laser prototype.","de":"Redesign und Implementation des GUI für ein experimentelles SRT-Lasersystem – von der Analyse über den Figma-Prototyp bis zu Usability-Tests und der Integration mit dem Laserprototyp."},
+    "problem": {"en":"The study GUI had to be redesigned as one clear treatment workflow.","de":"Das bestehende Studien-GUI sollte als klarer, zusammenhängender Behandlungsworkflow neu gestaltet werden."},
+    "role": {"en":"Analysis, interaction design, Figma prototyping, usability tests, and UI implementation in a two-person team.","de":"Analyse, Interaction Design, Figma-Prototyping, Usability-Tests und UI-Implementation in einem Zweierteam."},
+    "contribution": {"en":"Developed the Setup → Plan → Treat → Report workflow and refined the prototype based on specialist feedback.","de":"Entwicklung des Workflows Setup → Plan → Treat → Report und Überarbeitung des Prototyps anhand von Feedback aus Usability-Tests."},
+    "outcome": {"en":"A working MVP that was connected to the laser prototype and supports the main treatment process.","de":"Ein funktionsfähiger MVP, der mit dem Laserprototyp verbunden wurde und den zentralen Behandlungsablauf unterstützt."},
+    "stack": ["UX Research", "Figma", "Usability Testing", "Qt / QML"],
+    "image": "assets/projects/ba-srt-treatment-plan.png",
+    "imageAlt": {"en":"SRT laser treatment planning interface with retinal imaging and pattern controls","de":"Planungsansicht des SRT-Laser-GUI mit Netzhautbildern und Pattern-Steuerung"},
+    "visual": {"accent":"cyan","label":{"en":"Published case study","de":"Veröffentlichte Case Study"}}
   },
   {
-    "title": "Semester Thesis: SmartEating Web App",
-    "kicker": "SA - Product Frontend",
-    "description": "A React web app for personalized recipe and meal planning with login, user settings, recipe analysis, chat flows, i18n, and a typed API client generated from OpenAPI.",
-    "role": "Feature UI, forms, state, API integration",
-    "stack": ["React 19", "MUI", "Nx", "Redux Toolkit", "i18next"],
-    "image": "/assets/projects/sa-bitewise-dietary-matching.png",
-    "imageAlt": "BiteWise menu plan interface showing dietary matching cards",
-    "visual": {
-      "accent": "lime",
-      "label": "Meal Planner"
-    }
+    "slug":"smarteating", "status":"coming-soon", "detailUrl":"project.html?project=smarteating",
+    "title":{"en":"SmartEating Web App","de":"SmartEating Web App"}, "kicker":{"en":"Semester thesis · Product frontend","de":"Semesterarbeit · Product Frontend"},
+    "description":{"en":"Web application for personalized recipes and meal planning based on dietary preferences and restrictions.","de":"Webapplikation für personalisierte Rezepte und Menüplanung auf Basis von Ernährungspräferenzen und Einschränkungen."},
+    "problem":{"en":"Dietary preferences and restrictions had to be translated into understandable meal recommendations.","de":"Ernährungspräferenzen und Einschränkungen sollten in verständliche Menüempfehlungen übersetzt werden."},
+    "role":{"en":"Frontend development, interaction flows, forms, application state, and API integration.","de":"Frontend-Entwicklung, Interaktionsabläufe, Formulare, Applikationszustand und API-Integration."},
+    "contribution":{"en":"Implemented central user flows and connected them to a typed API and multilingual interface.","de":"Umsetzung zentraler User Flows und Anbindung an eine typisierte API sowie eine mehrsprachige Oberfläche."},
+    "outcome":{"en":"A functional prototype covering onboarding, planning, analysis, and account management.","de":"Ein funktionsfähiger Prototyp für Onboarding, Planung, Analyse und Kontoverwaltung."},
+    "stack":["React","MUI","Redux Toolkit","i18next"], "image":"assets/projects/sa-bitewise-dietary-matching.png",
+    "imageAlt":{"en":"SmartEating menu plan showing dietary matching cards","de":"SmartEating-Menüplan mit Karten zur Übereinstimmung von Ernährungsbedürfnissen"},
+    "visual":{"accent":"lime","label":{"en":"Case study coming soon","de":"Case Study folgt"}}
   },
   {
-    "title": "LunaDrive",
-    "kicker": "SE Project - Angular App",
-    "description": "A full-stack project with an Angular frontend, Angular Material, generated REST client, auth flows, Docker setup, and Playwright tests for frontend paths.",
-    "role": "Angular frontend, API client, testing workflow",
-    "stack": ["Angular 19", "Material", "TypeScript", "OpenAPI", "Playwright"],
-    "image": "/assets/projects/lunadrive-cost-overview.png",
-    "imageAlt": "LunaDrive cost overview page with filters and expense table",
-    "visual": {
-      "accent": "amber",
-      "label": "Drive Console"
-    }
+    "slug":"lunadrive", "status":"coming-soon", "detailUrl":"project.html?project=lunadrive",
+    "title":{"en":"LunaDrive","de":"LunaDrive"}, "kicker":{"en":"Software engineering project · Web app","de":"Software-Engineering-Projekt · Web App"},
+    "description":{"en":"Full-stack application for recording and reviewing vehicle costs, with authentication and automated frontend tests.","de":"Full-Stack-Applikation zur Erfassung und Auswertung von Fahrzeugkosten mit Authentifizierung und automatisierten Frontend-Tests."},
+    "problem":{"en":"Vehicle costs and related records needed a consistent overview and editing workflow.","de":"Fahrzeugkosten und zugehörige Einträge benötigten eine konsistente Übersicht und Bearbeitung."},
+    "role":{"en":"Angular frontend, API integration, and end-to-end tests.","de":"Angular-Frontend, API-Integration und End-to-End-Tests."},
+    "contribution":{"en":"Implemented responsive views and the typed API and testing workflow.","de":"Umsetzung responsiver Ansichten sowie des typisierten API- und Test-Workflows."},
+    "outcome":{"en":"A working application with authenticated flows and automated frontend coverage.","de":"Eine funktionsfähige Applikation mit authentifizierten Abläufen und automatisierten Frontend-Tests."},
+    "stack":["Angular","Material","TypeScript","Playwright"], "image":"assets/projects/lunadrive-cost-overview.png",
+    "imageAlt":{"en":"LunaDrive cost overview with filters and an expense table","de":"LunaDrive-Kostenübersicht mit Filtern und Ausgabentabelle"},
+    "visual":{"accent":"amber","label":{"en":"Case study coming soon","de":"Case Study folgt"}}
   },
   {
-    "title": "Students OST-RJ Website",
-    "kicker": "Campus Platform - SvelteKit",
-    "description": "A website for students at the OST Rapperswil campus with events, organization pages, internal login, and an admin GUI for users, organizations, and content.",
-    "role": "SvelteKit pages, admin flows, responsive UI",
-    "stack": ["SvelteKit", "TypeScript", "Vite", "MongoDB", "JWT"],
-    "image": "/assets/projects/students-ost-homepage.png",
-    "imageAlt": "Students OST-RJ homepage with campus navigation and organization sections",
-    "visual": {
-      "accent": "rose",
-      "label": "Campus Hub"
-    }
+    "slug":"students-ost-rj", "status":"coming-soon", "detailUrl":"project.html?project=students-ost-rj",
+    "title":{"en":"Students OST-RJ Website","de":"Students OST-RJ Website"}, "kicker":{"en":"Campus platform · Responsive web","de":"Campus-Plattform · Responsive Web"},
+    "description":{"en":"Campus website with events, organization pages, login, and an administration interface.","de":"Campus-Website mit Events, Organisationsseiten, Login und Administrationsoberfläche."},
+    "problem":{"en":"Public campus information and internal content management were distributed across separate processes.","de":"Öffentliche Campus-Informationen und die interne Inhaltsverwaltung waren auf verschiedene Abläufe verteilt."},
+    "role":{"en":"Responsive pages, administration flows, authentication UI, and frontend implementation.","de":"Responsive Seiten, Administrationsabläufe, Authentication UI und Frontend-Implementation."},
+    "contribution":{"en":"Implemented public and administrative views based on shared content models.","de":"Umsetzung öffentlicher und administrativer Ansichten auf Basis gemeinsamer Inhaltsmodelle."},
+    "outcome":{"en":"A responsive platform for visitors and internal content editors.","de":"Eine responsive Plattform für Besucher und interne Content-Verantwortliche."},
+    "stack":["SvelteKit","TypeScript","Vite","MongoDB"], "image":"assets/projects/students-ost-homepage.png",
+    "imageAlt":{"en":"Students OST-RJ homepage with campus navigation and organization sections","de":"Students OST-RJ Startseite mit Campus-Navigation und Organisationsbereichen"},
+    "visual":{"accent":"rose","label":{"en":"Case study coming soon","de":"Case Study folgt"}}
   }
 ]

@@ -3,157 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Nico Tuscano, frontend developer focused on web interfaces, UI architecture, and clean user flows." />
-  <title>Nico Tuscano - Frontend Developer</title>
+  <meta name="description" content="Portfolio of Nico Tuscano, UX/UI designer and frontend developer." />
+  <meta property="og:type" content="website" />
+  <title>Nico Tuscano · UX/UI & Frontend</title>
+  <script>
+    (() => {
+      const requested = new URLSearchParams(location.search).get("lang");
+      const saved = localStorage.getItem("portfolio-language");
+      document.documentElement.lang = requested === "de" || requested === "en" ? requested : (saved || "en");
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="tailwind.css" />
 </head>
 <body class="min-h-screen bg-[#101114] font-[Inter] text-stone-100 antialiased selection:bg-cyan-300/25 selection:text-white">
-  <div class="site-noise" aria-hidden="true"></div>
-  <div class="site-grid" aria-hidden="true"></div>
-
-  <header class="sticky top-0 z-30 border-b border-stone-100/10 bg-[#101114]/85 backdrop-blur">
+  <a id="skipLink" class="skip-link" href="#main">Skip to content</a>
+  <div class="site-noise" aria-hidden="true"></div><div class="site-grid" aria-hidden="true"></div>
+  <header class="sticky top-0 z-30 border-b border-stone-100/10 bg-[#101114]/90 backdrop-blur">
     <div class="mx-auto flex h-16 w-[min(1120px,92%)] items-center justify-between">
-      <a class="group flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.18em]" href="#home" aria-label="Back to top">
-        <span class="h-2.5 w-2.5 bg-cyan-300 transition group-hover:rotate-45"></span>
-        NT
-      </a>
-      <button id="menuToggle" class="grid h-10 w-10 place-items-center border border-stone-100/15 bg-stone-100/5 md:hidden" aria-label="Open navigation" aria-expanded="false">
-        <span class="grid gap-1" aria-hidden="true">
-          <span class="block h-0.5 w-4 bg-stone-100"></span>
-          <span class="block h-0.5 w-4 bg-stone-100"></span>
-          <span class="block h-0.5 w-4 bg-stone-100"></span>
-        </span>
-      </button>
-      <nav id="mainNav" class="absolute right-4 top-16 hidden min-w-44 flex-col gap-1 border border-stone-100/10 bg-[#15161a]/95 p-3 shadow-2xl shadow-black/30 md:static md:flex md:min-w-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Main navigation">
-        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#about">Profile</a>
-        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#skills">Stack</a>
-        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#projects">Projects</a>
-        <a class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#contact">Contact</a>
-      </nav>
+      <a id="brandLink" class="group flex items-center gap-2 text-sm font-extrabold uppercase tracking-[0.18em]" href="#home" aria-label="Nico Tuscano, back to top"><span class="h-2.5 w-2.5 bg-cyan-300 transition group-hover:rotate-45"></span>NT</a>
+      <div class="flex items-center gap-3">
+        <div class="language-switch" aria-label="Language"><button type="button" data-language="en">EN</button><button type="button" data-language="de">DE</button></div>
+        <button id="menuToggle" class="grid h-11 w-11 place-items-center border border-stone-100/15 bg-stone-100/5 md:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav"><span class="grid gap-1" aria-hidden="true"><span class="block h-0.5 w-4 bg-stone-100"></span><span class="block h-0.5 w-4 bg-stone-100"></span><span class="block h-0.5 w-4 bg-stone-100"></span></span></button>
+        <nav id="mainNav" class="absolute right-4 top-16 hidden min-w-44 flex-col gap-1 border border-stone-100/10 bg-[#15161a]/95 p-3 shadow-2xl shadow-black/30 md:static md:flex md:min-w-0 md:flex-row md:border-0 md:bg-transparent md:p-0 md:shadow-none" aria-label="Main navigation"><a id="navWork" class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#work">Work</a><a id="navProfile" class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#profile">Profile</a><a id="navContact" class="nav-link px-3 py-2 text-sm text-stone-300 transition hover:text-white" href="#contact">Contact</a></nav>
+      </div>
     </div>
   </header>
-
-  <main id="home" class="pb-12">
-    <section class="reveal mx-auto grid min-h-[82vh] w-[min(1120px,92%)] items-center gap-10 py-14 lg:grid-cols-[1.05fr_0.95fr]">
-      <div>
-        <p class="mb-4 inline-flex border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.24em] text-cyan-200">Frontend Developer</p>
-        <h1 class="max-w-3xl text-4xl font-extrabold leading-[0.98] tracking-normal sm:text-6xl lg:text-7xl">
-          Interfaces with edge, rhythm, and clean code.
-        </h1>
-        <p class="mt-6 max-w-2xl text-base leading-7 text-stone-300">
-          I am Nico, a frontend developer who builds interfaces that feel clear:
-          responsive, maintainable, close to the user flow, and tuned with care.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a class="btn-primary" href="#projects">View projects</a>
-          <a class="btn-secondary" href="#contact">Get in touch</a>
-        </div>
-      </div>
-
-      <aside class="hero-panel" aria-label="Portfolio snapshot">
-        <div class="flex items-center justify-between border-b border-stone-100/10 pb-4">
-          <div>
-            <p class="text-xs uppercase tracking-[0.2em] text-stone-400">current focus</p>
-            <p class="mt-1 text-xl font-bold">Web UI Engineering</p>
-          </div>
-          <span class="h-3 w-3 bg-lime-300"></span>
-        </div>
-        <div class="mt-5 grid gap-3">
-          <div class="hero-row">
-            <span>React / Angular / Svelte</span>
-            <span>frontend</span>
-          </div>
-          <div class="hero-row">
-            <span>Responsive apps and dashboards</span>
-            <span>ui work</span>
-          </div>
-          <div class="hero-row">
-            <span>Forms, auth and data flows</span>
-            <span>product</span>
-          </div>
-        </div>
-        <div class="mt-6 grid grid-cols-3 gap-3">
-          <div class="stat-tile">
-            <p class="text-3xl font-extrabold" data-count="4">0</p>
-            <p>Highlighted projects</p>
-          </div>
-          <div class="stat-tile">
-            <p class="text-3xl font-extrabold" data-count="9">0</p>
-            <p>Years Of Experience</p>
-          </div>
-          <div class="stat-tile">
-            <p class="text-3xl font-extrabold" data-count="5">0</p>
-            <p>Frameworks Used</p>
-          </div>
-        </div>
-      </aside>
+  <main id="main">
+    <section id="home" class="mx-auto grid min-h-[78vh] w-[min(1120px,92%)] items-center gap-12 py-16 lg:grid-cols-[1.2fr_0.8fr]">
+      <div><p id="heroEyebrow" class="eyebrow">UX/UI design · Frontend development</p><h1 id="heroTitle" class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.98] sm:text-6xl lg:text-7xl">Interfaces for complex workflows.</h1><p id="heroText" class="mt-7 max-w-2xl text-lg leading-8 text-stone-300">I work on the analysis, design, testing, and implementation of user interfaces. My projects range from medical control software to web applications and administrative tools.</p><div class="mt-9 flex flex-wrap gap-3"><a id="baCta" class="btn-primary" href="project.html?project=ba-srt-laser-gui&lang=en">Bachelor thesis case study</a><a id="workCta" class="btn-secondary" href="#work">View all projects</a></div></div>
+      <aside id="statsPanel" class="hero-panel" aria-label="Portfolio statistics"><p id="statsTitle" class="text-sm font-bold uppercase tracking-[0.16em] text-cyan-200">Portfolio overview</p><div class="mt-5 grid gap-3"><div class="stat-tile"><p class="text-4xl font-extrabold" data-count="4">4</p><p id="highlightedProjects">Highlighted projects</p></div><div class="stat-tile"><p class="text-4xl font-extrabold" data-count="9">9</p><p id="yearsExperience">Years learning &amp; building</p></div><div class="stat-tile"><p class="text-4xl font-extrabold" data-count="5">5</p><p id="frameworksUsed">Frameworks used</p></div></div></aside>
     </section>
-
-    <section id="about" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 border-y border-stone-100/10 py-14 md:grid-cols-[0.7fr_1.3fr]">
-      <h2 class="section-title">Profile</h2>
-      <p class="max-w-3xl text-lg leading-8 text-stone-300">
-        I come from projects where UI is not just decoration: medical control interfaces,
-        role-based web apps, admin workflows, generated API clients, forms, state, and tests.
-        That mix of product thinking and technical discipline is what I bring to frontend work.
-      </p>
-    </section>
-
-    <section id="skills" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 py-14 md:grid-cols-[0.7fr_1.3fr]">
-      <h2 class="section-title">Stack</h2>
-      <div class="flex flex-wrap gap-2.5">
-        <span class="skill-chip">HTML</span>
-        <span class="skill-chip">CSS / Sass</span>
-        <span class="skill-chip">JavaScript</span>
-        <span class="skill-chip">TypeScript</span>
-        <span class="skill-chip">Tailwind CSS</span>
-        <span class="skill-chip">React</span>
-        <span class="skill-chip">Angular</span>
-        <span class="skill-chip">SvelteKit</span>
-      </div>
-    </section>
-
-    <section id="projects" class="reveal mx-auto w-[min(1120px,92%)] py-14">
-      <div class="mb-6 flex items-end justify-between gap-4">
-        <div>
-          <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-200">selected work</p>
-          <h2 class="section-title mt-2">Projects</h2>
-        </div>
-        <p class="hidden max-w-sm text-right text-sm text-stone-400 sm:block">Four study projects, curated for frontend depth and UI responsibility.</p>
-      </div>
-
-      <div class="relative">
-        <div id="projectViewport" class="cursor-grab overflow-hidden">
-          <div id="projectTrack" class="flex"></div>
-        </div>
-
-        <button id="prevProject" class="carousel-button -left-3" aria-label="Previous project">&lt;</button>
-        <button id="nextProject" class="carousel-button -right-3" aria-label="Next project">&gt;</button>
-        <div id="projectDots" class="mt-6 flex items-center justify-center gap-2"></div>
-      </div>
-    </section>
-
-    <section id="contact" class="reveal mx-auto grid w-[min(1120px,92%)] gap-6 border-t border-stone-100/10 py-14 md:grid-cols-[0.7fr_1.3fr]">
-      <h2 class="section-title">Contact</h2>
-      <div>
-        <p class="max-w-2xl text-lg leading-8 text-stone-300">Get in contact with me here:</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a class="btn-primary" href="mailto:nick200108@gmail.com">Email</a>
-          <a class="btn-secondary" href="https://github.com/nicknhh" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
-      </div>
-    </section>
+    <section id="work" class="reveal mx-auto w-[min(1120px,92%)] border-t border-stone-100/10 py-16"><div class="mb-8 grid gap-4 md:grid-cols-[1fr_0.7fr] md:items-end"><div><p id="workEyebrow" class="eyebrow">Selected projects</p><h2 id="workTitle" class="section-title mt-3">Projects and case studies</h2></div><p id="workIntro" class="text-sm leading-6 text-stone-300 md:text-right">One complete UX case study and three selected implementation projects.</p></div><div id="projectGrid" class="grid gap-6 md:grid-cols-2"><p id="loadingProjects" role="status" class="text-stone-300">Loading projects…</p></div><noscript><article class="error-panel mt-6"><h3 class="font-bold">SRT Laser Treatment GUI</h3><p class="mt-2">A medical UX bachelor thesis covering analysis, prototyping, usability testing and implementation.</p><a class="case-link" href="project.html?project=ba-srt-laser-gui">Open case study →</a></article></noscript></section>
+    <section id="profile" class="reveal mx-auto grid w-[min(1120px,92%)] gap-8 border-t border-stone-100/10 py-16 md:grid-cols-[0.65fr_1.35fr]"><div><p id="profileEyebrow" class="eyebrow">Profile</p><h2 id="profileTitle" class="section-title mt-3">UX/UI and frontend development</h2></div><div><p id="profileText" class="max-w-3xl text-lg leading-8 text-stone-300">I am particularly interested in projects where a user interface has to make a complex process understandable. I work from requirements and prototypes through usability tests to implementation.</p><div class="mt-6 flex flex-wrap gap-2"><span class="skill-chip">UX Research</span><span class="skill-chip">Interaction Design</span><span class="skill-chip">Figma</span><span class="skill-chip">Usability Testing</span><span class="skill-chip">Design Systems</span><span class="skill-chip">Frontend Development</span></div></div></section>
+    <section id="contact" class="reveal mx-auto grid w-[min(1120px,92%)] gap-8 border-t border-stone-100/10 py-16 md:grid-cols-[0.65fr_1.35fr]"><h2 id="contactTitle" class="section-title">Contact</h2><div><p id="contactText" class="max-w-2xl text-lg leading-8 text-stone-300">You can contact me by email or find my projects on GitHub.</p><div class="mt-6 flex flex-wrap gap-3"><a id="emailLink" class="btn-primary" href="mailto:nick200108@gmail.com">Email</a><a id="githubLink" class="btn-secondary" href="https://github.com/nicknhh" target="_blank" rel="noreferrer">GitHub</a></div></div></section>
   </main>
-
-  <footer class="border-t border-stone-100/10 py-6 text-stone-500">
-    <div class="mx-auto flex w-[min(1120px,92%)] flex-wrap items-center justify-between gap-2 text-sm">
-      <p>&copy; <span id="year"></span> Nico Tuscano</p>
-      <p>Built with Tailwind CSS for GitHub Pages.</p>
-    </div>
-  </footer>
-
+  <footer class="border-t border-stone-100/10 py-6 text-stone-500"><div class="mx-auto flex w-[min(1120px,92%)] flex-wrap items-center justify-between gap-2 text-sm"><p>&copy; <span id="year"></span> Nico Tuscano</p><p id="footerText">UX/UI and frontend development.</p></div></footer>
   <script src="script.js" defer></script>
 </body>
 </html>

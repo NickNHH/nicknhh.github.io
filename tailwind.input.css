@@ -5,9 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
+  :focus-visible { outline: 3px solid rgb(103 232 249); outline-offset: 4px; }
+
   body {
+    overflow-x: hidden;
     background:
       radial-gradient(circle at 18% 22%, rgb(34 211 238 / 0.08), transparent 24rem),
       linear-gradient(135deg, #101114 0%, #171312 42%, #101114 100%);
@@ -20,7 +24,7 @@
     position: fixed;
     inset: 0;
     z-index: -20;
-    opacity: 0.28;
+    opacity: 0.14;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
   }
 
@@ -30,22 +34,22 @@
     inset: 0;
     z-index: -10;
     background-image:
-      linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+      linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px);
     background-size: 72px 72px;
     mask-image: linear-gradient(to bottom, black, transparent 82%);
   }
 
   .btn-primary {
-    @apply inline-flex items-center border border-cyan-200/30 bg-cyan-300 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.12em] text-stone-950 shadow-[6px_6px_0_rgb(0_0_0/0.45)] transition hover:-translate-y-0.5 hover:shadow-[8px_8px_0_rgb(0_0_0/0.5)];
+    @apply inline-flex min-h-11 items-center border border-cyan-200/30 bg-cyan-300 px-5 py-3 text-sm font-extrabold uppercase tracking-[0.1em] text-stone-950 shadow-[4px_4px_0_rgb(0_0_0/0.4)] transition hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center border border-stone-100/15 bg-stone-100/5 px-5 py-3 text-sm font-bold uppercase tracking-[0.12em] text-stone-100 transition hover:-translate-y-0.5 hover:border-stone-100/30 hover:bg-stone-100/10;
+    @apply inline-flex min-h-11 items-center border border-stone-100/20 bg-stone-100/5 px-5 py-3 text-sm font-bold uppercase tracking-[0.1em] text-stone-100 transition hover:-translate-y-0.5 hover:border-stone-100/40 hover:bg-stone-100/10;
   }
 
   .hero-panel {
-    @apply border border-stone-100/10 bg-[#15161a]/90 p-5 shadow-[12px_12px_0_rgb(0_0_0/0.28)];
+    @apply border border-stone-100/10 bg-[#15161a]/95 p-5 shadow-[6px_6px_0_rgb(0_0_0/0.2)];
   }
 
   .hero-row {
@@ -61,7 +65,7 @@
   }
 
   .stat-tile p:last-child {
-    @apply mt-1 text-xs uppercase tracking-[0.14em] text-stone-500;
+    @apply mt-1 text-sm leading-5 text-stone-300;
   }
 
   .section-title {
@@ -200,10 +204,133 @@
   .carousel-button {
     @apply absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 place-items-center border border-stone-100/15 bg-[#15161a]/95 text-3xl leading-none text-stone-100 transition hover:bg-stone-100/10 md:grid;
   }
+
+  .skip-link {
+    @apply fixed left-4 top-4 z-50 -translate-y-24 bg-cyan-300 px-4 py-3 font-bold text-stone-950 transition focus:translate-y-0;
+  }
+
+  .language-switch {
+    @apply flex overflow-hidden border border-stone-100/15 bg-stone-100/[0.03];
+  }
+
+  .language-switch button {
+    @apply grid h-11 min-w-11 place-items-center px-2 font-mono text-xs font-bold text-stone-300 transition hover:bg-stone-100/10 hover:text-white;
+  }
+
+  .language-switch button[aria-pressed="true"] {
+    @apply bg-cyan-300 text-stone-950;
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase tracking-[0.2em] text-cyan-200;
+  }
+
+  .editorial-panel {
+    @apply border-l-2 border-cyan-300 bg-[#15161a]/70 p-6 shadow-[12px_12px_0_rgb(0_0_0/0.24)];
+  }
+
+  .process-row {
+    @apply grid grid-cols-[2.5rem_1fr] gap-3 border-t border-stone-100/10 py-4;
+  }
+  .process-row > span { @apply font-mono text-sm text-cyan-300; }
+  .process-row strong { @apply text-sm text-stone-100; }
+  .process-row p { @apply mt-1 text-sm leading-6 text-stone-400; }
+
+  .work-card {
+    @apply grid overflow-hidden border border-stone-100/10 bg-[#15161a]/95 shadow-[5px_5px_0_rgb(0_0_0/0.18)];
+  }
+  .work-image-wrap { @apply relative block min-h-64 overflow-hidden bg-black; }
+  .work-image { @apply h-full min-h-64 w-full object-cover object-left-top transition duration-500; }
+  .work-image-wrap:hover .work-image { @apply scale-[1.025]; }
+  .work-image-wrap::after { content: ""; @apply pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-cyan-300/10; }
+  .work-status { @apply absolute bottom-4 left-4 z-10 border border-cyan-200/30 bg-[#101114]/90 px-3 py-2 text-xs font-extrabold uppercase tracking-[0.14em] text-stone-100 backdrop-blur; }
+  .work-status-published { @apply bg-cyan-300 text-stone-950; }
+  .work-copy { @apply flex flex-col p-6; }
+  .work-card-secondary { @apply border-stone-100/[0.07]; }
+  .work-card-secondary .work-image-wrap,
+  .work-card-secondary .work-image { @apply min-h-48; }
+  .project-summary { @apply mt-5 divide-y divide-stone-100/10 border-y border-stone-100/10; }
+  .project-summary > div { @apply grid gap-1 py-3 sm:grid-cols-[5.5rem_1fr]; }
+  .project-summary dt { @apply text-xs font-bold uppercase tracking-[0.12em] text-cyan-200; }
+  .project-summary dd { @apply text-sm leading-6 text-stone-300; }
+  .case-link { @apply mt-6 inline-flex items-center justify-between border-t border-stone-100/10 pt-5 text-sm font-extrabold uppercase tracking-[0.14em] text-cyan-200 transition hover:text-cyan-100; }
+  .error-panel { @apply border border-red-300/20 bg-red-300/5 p-6 text-red-100; }
+
+  .case-header { @apply sticky top-0 z-40 grid h-16 grid-cols-[1fr_auto_1fr] items-center border-b border-stone-100/10 bg-[#101114]/95 px-[4%] backdrop-blur; }
+  .back-link { @apply inline-flex items-center gap-2 justify-self-start text-sm font-bold text-stone-300 transition hover:text-white; }
+  .brand-link { @apply border border-cyan-300/30 px-2 py-1 text-xs font-extrabold tracking-[0.18em] text-cyan-200; }
+  .case-position { @apply justify-self-end font-mono text-xs text-stone-500; }
+  .loading-state { @apply mx-auto grid min-h-[calc(100vh-4rem)] w-[min(1200px,92%)] place-items-center text-stone-400; }
+  .case-shell { @apply mx-auto w-[min(1280px,94%)] py-7; }
+  .slide-viewport { @apply min-h-[calc(100vh-12rem)]; touch-action: pan-y; }
+  .case-slide { @apply grid min-h-[calc(100vh-12rem)] gap-8 outline-none lg:grid-cols-[0.82fr_1.18fr] lg:items-center; }
+  .case-copy { @apply min-w-0 py-6 lg:py-10; overflow-wrap: anywhere; }
+  .case-copy h1 { @apply mt-4 text-3xl font-extrabold leading-[1.02] sm:text-5xl; }
+  .case-lede { @apply mt-6 text-base leading-7 text-stone-300 sm:text-lg sm:leading-8; }
+  .case-media { @apply min-w-0; }
+  .case-figure { @apply overflow-hidden border border-stone-100/10 bg-black/30 p-2 shadow-[10px_10px_0_rgb(0_0_0/0.25)]; }
+  .case-figure img { @apply max-h-[68vh] w-full object-contain; }
+  .case-figure-tall img { @apply max-h-[65vh]; }
+  .case-figure-square img { @apply max-h-[60vh]; }
+  .case-summary-grid, .insight-grid { @apply mt-7 grid gap-px overflow-hidden border border-stone-100/10 bg-stone-100/10 sm:grid-cols-2; }
+  .case-summary-grid > div, .insight-grid > div { @apply bg-[#15161a] p-4; }
+  .case-summary-grid span, .insight-grid span, .iteration-list span { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-cyan-200; }
+  .case-summary-grid p, .insight-grid p { @apply mt-2 text-sm leading-6 text-stone-300; }
+  .case-list { @apply mt-7 space-y-3 text-sm leading-6 text-stone-300; }
+  .case-list li { @apply border-l border-cyan-300/40 pl-4; }
+  .case-list strong { @apply text-stone-100; }
+  .case-steps { @apply mt-7 space-y-2; }
+  .case-steps > div { @apply grid grid-cols-[2.5rem_1fr] gap-3 border-t border-stone-100/10 py-3; }
+  .case-steps span { @apply font-mono text-xs text-cyan-300; }
+  .case-steps p { @apply text-sm leading-6 text-stone-300; }
+  blockquote { @apply mt-6 border-l-2 border-cyan-300 bg-cyan-300/5 px-5 py-4 text-sm font-medium leading-6 text-stone-200; }
+  .workflow-strip { @apply mt-7 grid gap-2 sm:grid-cols-2; }
+  .workflow-strip li { @apply border border-stone-100/10 bg-stone-100/[0.03] p-4; }
+  .workflow-strip span { @apply block font-mono text-xs text-cyan-300; }
+  .workflow-strip strong { @apply mt-3 block text-lg; }
+  .workflow-strip p, .case-note { @apply mt-2 text-sm leading-6 text-stone-400; }
+  .case-note { @apply mt-6 border-t border-stone-100/10 pt-4; }
+  .comparison-grid { @apply grid gap-3; }
+  .comparison-grid .case-figure { @apply shadow-none; }
+  .comparison-grid .case-figure img { @apply max-h-[22vh]; }
+  .comparison-grid-two { @apply sm:grid-cols-2; }
+  .comparison-grid-two .case-figure img { @apply max-h-[55vh]; }
+  .iteration-list { @apply mt-7 space-y-4; }
+  .iteration-list > div { @apply border-l border-stone-100/20 pl-4; }
+  .iteration-list p { @apply mt-1 text-sm leading-6 text-stone-300; }
+  .metric-row { @apply mt-7 grid gap-2 sm:grid-cols-3; }
+  .case-metric { @apply border border-stone-100/10 bg-stone-100/[0.03] p-4; }
+  .case-metric strong { @apply block text-3xl font-extrabold text-cyan-200; }
+  .case-metric span { @apply mt-2 block text-xs leading-5 text-stone-400; }
+  .decision-stack { @apply mt-7 space-y-3; }
+  .decision-pair { @apply grid gap-px overflow-hidden border border-stone-100/10 bg-stone-100/10 sm:grid-cols-2; }
+  .decision-pair > div { @apply bg-[#15161a] p-4; }
+  .decision-pair span { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-stone-500; }
+  .decision-pair > div:last-child span { @apply text-cyan-200; }
+  .decision-pair p { @apply mt-2 text-sm leading-6 text-stone-300; }
+  .case-controls { @apply mt-5 flex items-center justify-between gap-3 border-t border-stone-100/10 pt-4; }
+  .slide-button { @apply inline-flex min-h-11 min-w-24 items-center justify-center gap-2 border border-stone-100/20 bg-stone-100/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] transition hover:bg-stone-100/10 disabled:cursor-not-allowed disabled:opacity-30; }
+  .slide-dots { @apply hidden flex-wrap justify-center gap-1 md:flex; }
+  .slide-dots button { @apply grid h-11 w-11 place-items-center border border-stone-100/15 font-mono text-xs text-stone-300 transition hover:border-stone-100/40 hover:text-white; }
+  .slide-dots button[aria-current="step"] { @apply border-cyan-300 bg-cyan-300 text-stone-950; }
+  .progress-track { @apply mt-3 h-px bg-stone-100/10; }
+  .progress-track span { @apply block h-full bg-cyan-300 transition-[width] duration-300; }
+  .keyboard-hint { @apply mt-3 text-center text-xs leading-5 text-stone-400; }
+  .placeholder-case { @apply mx-auto grid min-h-[calc(100vh-4rem)] w-[min(1120px,92%)] items-center gap-10 py-12 lg:grid-cols-2; }
+  .placeholder-copy h1, .not-found h1 { @apply mt-4 text-4xl font-extrabold sm:text-6xl; }
+  .placeholder-copy dl { @apply my-7 border-y border-stone-100/10; }
+  .placeholder-copy dl > div { @apply grid gap-2 border-b border-stone-100/10 py-4 last:border-0 sm:grid-cols-[7rem_1fr]; }
+  .placeholder-copy dt { @apply text-xs font-extrabold uppercase tracking-[0.14em] text-cyan-200; }
+  .placeholder-copy dd { @apply text-sm leading-6 text-stone-300; }
+  .coming-note { @apply mb-7 border-l-2 border-cyan-300 bg-cyan-300/5 p-4 text-sm leading-6 text-stone-300; }
+  .placeholder-case figure { @apply overflow-hidden border border-stone-100/10 bg-black/30 p-2 shadow-[12px_12px_0_rgb(0_0_0/0.25)]; }
+  .placeholder-case img { @apply w-full object-cover object-left-top; }
+  .not-found { @apply mx-auto flex min-h-[calc(100vh-4rem)] w-[min(760px,92%)] flex-col items-start justify-center; }
+  .not-found > p:not(.eyebrow) { @apply my-6 text-lg text-stone-400; }
 }
 
 @layer utilities {
-  .reveal {
+  .reveal-ready {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 700ms ease, transform 700ms ease;
@@ -213,4 +340,135 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .slide-enter { animation: slide-enter 420ms ease both; }
+}
+
+@keyframes slide-enter {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal-ready { opacity: 1; transform: none; }
+}
+
+/* Desktop case studies behave like a presentation: one complete slide per viewport. */
+@media (min-width: 1024px) {
+  .case-body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .case-body > main {
+    height: calc(100dvh - 4rem);
+    overflow: hidden;
+  }
+
+  .case-shell {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto auto auto;
+    height: 100%;
+    padding-block: 0.75rem;
+  }
+
+  .slide-viewport,
+  .case-slide {
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .case-slide {
+    align-items: center;
+  }
+
+  .case-copy {
+    max-height: 100%;
+    padding-block: 0.5rem;
+  }
+
+  .case-copy h1 {
+    font-size: clamp(2rem, 3.35vw, 3.35rem);
+  }
+
+  .case-media,
+  .comparison-grid,
+  .case-figure {
+    min-height: 0;
+    max-height: 100%;
+  }
+
+  .case-figure img {
+    max-height: min(64vh, calc(100dvh - 12.5rem));
+  }
+
+  .comparison-grid {
+    height: 100%;
+  }
+
+  .comparison-grid .case-figure img {
+    max-height: min(19vh, 12rem);
+  }
+
+  .comparison-grid-two .case-figure img {
+    max-height: min(55vh, calc(100dvh - 14rem));
+  }
+
+  .case-controls {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .progress-track,
+  .keyboard-hint {
+    margin-top: 0.35rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 900px) {
+  .case-shell { padding-block: 0.5rem; }
+  .case-slide { gap: 1.5rem; }
+  .case-copy h1 { margin-top: 0.5rem; font-size: clamp(1.9rem, 2.7vw, 2.55rem); }
+  .case-lede { margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.45rem; }
+  .case-summary-grid,
+  .insight-grid,
+  .case-list,
+  .case-steps,
+  .workflow-strip,
+  .iteration-list,
+  .metric-row,
+  .decision-stack { margin-top: 0.75rem; }
+  .case-summary-grid > div,
+  .insight-grid > div,
+  .case-metric,
+  .decision-pair > div { padding: 0.65rem; }
+  .case-summary-grid p,
+  .insight-grid p,
+  .decision-pair p,
+  .case-list,
+  .case-steps p,
+  .iteration-list p,
+  .workflow-strip p,
+  .case-note { font-size: 0.9375rem; line-height: 1.35rem; }
+  .case-steps > div { padding-block: 0.45rem; }
+  .case-note { margin-top: 0.75rem; padding-top: 0.5rem; }
+  blockquote { margin-top: 0.75rem; padding-block: 0.65rem; font-size: 0.9375rem; line-height: 1.35rem; }
+  .case-metric strong { font-size: 1.75rem; }
+  .case-metric span { margin-top: 0.25rem; font-size: 0.75rem; line-height: 1.1rem; }
+  .case-controls { margin-top: 0.25rem; padding-top: 0.25rem; }
+  .keyboard-hint { display: none; }
+}
+
+.nav-link[aria-current] { color: rgb(165 243 252); }
+.nav-link[aria-current]::after { content: ""; display: block; height: 2px; margin-top: 0.2rem; background: rgb(103 232 249); }
+
+@media (max-width: 639px) {
+  .case-header { padding-inline: 1rem; }
+  .case-position { display: none; }
+  .back-link > span:last-child { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  .case-controls { gap: 0.5rem; }
+  .slide-button { min-width: 0; flex: 1; }
 }
